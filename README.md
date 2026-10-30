@@ -14,7 +14,8 @@
 - Backend: Flask + PayPal API + M-Pesa Daraja API
 - Frontend: React + Vite
 - Deployed on Render
-
+- AI: OpenAI GPT-4o for transaction categorization + fraud alerts + Swahili/English financial chatbot
+  
 ##Test Accounts(Paypal Sandbox)
 **Business(Receiver):sb-43q3bo53465488@business.example.com
 **Personal(Buyer):
