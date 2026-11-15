@@ -1,8 +1,7 @@
 # PesaAI KE 🇰🇪 - Kenya's PayPal + M-Pesa AI Banking
 ## Live Demo (Permanent - For Judges)
-- **Frontend (PesaAI App):https://mobile-bankig-api-2.onrender.com
-- **Backend (API): https://mobile-bankig-api-1.onrender.com
-  
+- **Frontend (PesaAI App):https://mobile-banking-api-3nw0.onrender.com/docs
+- **Backend (API):https://mobile-banking-api-3nw0.onrender.com
 
 ## How to Test (For Judges)
 1. Open Frontend link
