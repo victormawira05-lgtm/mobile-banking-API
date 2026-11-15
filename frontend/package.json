@@ -16,9 +16,14 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
-    "vite": "^5.4.10"
+    "vite": "^5.4.21"
   },
   "engines": {
     "node": "22.x"
-  }
+  },
+  "description": "A small React app that connects to the Flask API in this repository.",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

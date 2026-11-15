@@ -1,14 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import loans
-from app.core.config import settings
+from app.api.loans import router as loans_router
 
-app = FastAPI(
-    title=settings.app_name,
-    version=settings.version,
-    description="One API to launch compliant micro-loans. Built for Kenya, M-Pesa ready.",
-)
+app = FastAPI(title="Mobile Banking API - 500 KES Demo", version="1.0.0")
 
+# CORS for frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,8 +13,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(loans.router)
+app.include_router(loans_router, prefix="/v1/loans", tags=["Loans"])
 
-@app.get("/")
+@app.get("/", tags=["Root"])
 def root():
-    return {"message": "Mobile Banking API - 500 KES Demo Ready", "docs": "/docs"}
+    return {"status": "ok", "message": "Mobile Banking API running", "docs": "/docs"}
