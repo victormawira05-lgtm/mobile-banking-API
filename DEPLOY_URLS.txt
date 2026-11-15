@@ -1,2 +1,2 @@
-Backend: https://verbose-space-couscous-97v9pxppx66vh9pp5-8000.app.github.dev/health
-Frontend: https://verbose-space-couscous-97v9pxppx66vh9pp5-3000.app.github.dev
+Backend: https://mobile-banking-api-3nw0.onrender.com
+Frontend: https://mobile-banking-api-3nw0.onrender.com/docs#/Loans/affordability_check_v1_loans_affordability_check_post
