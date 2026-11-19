@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Banking - 500 KES Demo</title>
+<style>
+body{font-family:system-ui;padding:20px;max-width:500px;margin:0 auto}
+button{background:#0f172a;color:white;border:0;padding:16px 24px;border-radius:999px;width:100%;font-weight:bold;font-size:16px;cursor:pointer}
+pre{background:#f1f5f9;padding:16px;border-radius:12px;overflow:auto;white-space:pre-wrap;margin-top:16px}
+small{color:#64748b}
+</style>
+</head>
+<body>
+<h2 style="text-align:center">Mobile Banking API - 500 KES Demo</h2>
+<p style="text-align:center;color:#64748b">Built by victormawira05-lgtm</p>
+<button onclick="check()">Check 500 KES Affordability</button>
+<pre id="out">Click button to test...</pre>
+<p id="api-url" style="text-align:center"></p>
+
+<script>
+// Auto-detect backend URL in Codespaces
+function getApiUrl() {
+  const host = window.location.hostname;
+  if (host.includes('app.github.dev')) {
+    // Replace -5173 with -8000 to get backend URL
+    const backendHost = host.replace(/-5173\./, '-8000.');
+    return `https://${backendHost}`;
+  }
+  // Local dev fallback
+  return 'http://localhost:8000';
+}
+
+const API = getApiUrl();
+document.getElementById('api-url').innerHTML = `<small>Backend: ${API}</small>`;
+
+async function check(){
+  const out = document.getElementById('out');
+  out.textContent = 'Checking...';
+  try {
+    const res = await fetch(`${API}/v1/loans/affordability-check`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        income: 2500,
+        expenses: 1500,
+        loan_amount: 500,
+        loan_purpose: 'airtime',
+        existing_debt: 0
+      })
+    });
+    const data = await res.json();
+    out.textContent = JSON.stringify(data, null, 2);
+  } catch(e) {
+    out.textContent = JSON.stringify({
+      error: "Failed to fetch",
+      hint: `Backend URL: ${API}. Make sure port 8000 is Public in PORTS tab`,
+      details: e.message
+    }, null, 2);
+  }
+}
+</script>
+</body>
+</html>

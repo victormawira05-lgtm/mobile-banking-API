@@ -1,0 +1,2 @@
+Backend: https://mobile-banking-api-3nw0.onrender.com
+Frontend: https://mobile-banking-api-3nw0.onrender.com/docs#/Loans/affordability_check_v1_loans_affordability_check_post
